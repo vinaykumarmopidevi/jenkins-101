@@ -67,3 +67,31 @@ docker inspect <container_id> | grep IPAddress
 ```
 docker pull devopsjourney1/myjenkinsagents:python
 ```
+
+## Important docker commands
+```
+docker exec -it jenkins-blueocean bash
+cd /var/jenkins_home/
+ls -ltra
+cat test.txt
+  
+docker ps
+docker inspect
+ 
+ docker run -i --rm --name agent --init jenkins/agent java -jar /usr/share/jenkins/agent.jar
+ 
+ jenkins/agent:latest
+ 
+ 
+ https://hub.docker.com/r/jenkins/agent
+ https://github.com/jenkinsci/docker-agent
+ jenkins/jenkins:2.414.2-jdk11
+ 
+ /****************
+FROM jenkins/agent:alpine-jdk11
+USER root
+RUN apk add python3
+RUN apk add py3-pip
+USER jenkins
+ ****************/
+```
